@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @table_generator.name %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @table_generator.contents %>
+</p>
+
+<%= link_to 'Edit', edit_table_generator_path(@table_generator) %> |
+<%= link_to 'Back', table_generators_path %>

@@ -1,6 +1,6 @@
-Given(/I have generators titled (.+)/) do |generators|
+Given(/I have table generators titled (.+)/) do |generators|
   generators.split(', ').each do |g|
-    Generator.create!(name: g)
+    TableGenerator.create!(name: g)
   end
 end
 
@@ -12,8 +12,8 @@ Then("I should see {string}") do |string|
   expect(page).to have_content(string)
 end
 
-Given("I have no generators") do
-  Generator.delete_all
+Given("I have no table generators") do
+  TableGenerator.delete_all
 end
 
 Given(/I am on (.+)$/) do |page_name|
@@ -32,6 +32,6 @@ When("I press {string}") do |string|
   click_button string
 end
 
-Then("I should have {int} generator") do |int|
-  Generator.count.should == int.to_i
+Then("I should have {int} table generator") do |int|
+  TableGenerator.count.should == int.to_i
 end

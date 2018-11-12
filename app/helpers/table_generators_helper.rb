@@ -1,0 +1,2 @@
+module TableGeneratorsHelper
+end
