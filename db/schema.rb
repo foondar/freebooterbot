@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_174145) do
+ActiveRecord::Schema.define(version: 2018_11_13_001525) do
 
-  create_table "generators", force: :cascade do |t|
-    t.string "name"
-    t.string "contents"
-    t.string "type"
+  create_table "descriptions", force: :cascade do |t|
+    t.integer "generator_id"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["generator_id"], name: "index_descriptions_on_generator_id"
   end
 
   create_table "table_generators", force: :cascade do |t|

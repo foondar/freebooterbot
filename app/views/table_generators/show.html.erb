@@ -6,9 +6,10 @@
 </p>
 
 <p>
-  <strong>Contents:</strong>
-  <%= @table_generator.contents %>
+  <strong>Results:</strong>
+  <%= @table_generator.generate %>
 </p>
 
+<%= link_to 'Generate', table_generator_path(@table_generator) %> |
 <%= link_to 'Edit', edit_table_generator_path(@table_generator) %> |
 <%= link_to 'Back', table_generators_path %>

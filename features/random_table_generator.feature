@@ -19,3 +19,9 @@ Feature: Random Table Generator
 		Then I should see "Table generator was successfully created"
 		And I should see "Magic Type"
 		And I should have 1 table generator
+
+	Scenario: Generate scene inspiration
+		Given that I have a table generator titled "Magic Type" with contents "Evocation"
+		When I go to the "Magic Type" table generator
+		And I follow "Generate"
+		Then I should see one option from the "Magic Type" contents

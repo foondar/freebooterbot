@@ -15,7 +15,7 @@
     <% @table_generators.each do |table_generator| %>
       <tr>
         <td><%= table_generator.name %></td>
-        <td><%= table_generator.contents %></td>
+        <td><%= table_generator.generate %></td>
         <td><%= link_to 'Show', table_generator %></td>
         <td><%= link_to 'Edit', edit_table_generator_path(table_generator) %></td>
         <td><%= link_to 'Destroy', table_generator, method: :delete, data: { confirm: 'Are you sure?' } %></td>

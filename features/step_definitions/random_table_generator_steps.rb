@@ -35,3 +35,12 @@ end
 Then("I should have {int} table generator") do |int|
   TableGenerator.count.should == int.to_i
 end
+
+Given("that I have a table generator titled {string} with contents {string}") do |name, contents|
+  TableGenerator.create!(name: name, contents: contents)
+end
+
+Then("I should see one option from the {string} contents") do |string|
+  generator = TableGenerator.find_by_name(string)
+  expect(page).to have_content(generator.contents)
+end
