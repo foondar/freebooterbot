@@ -69,6 +69,14 @@ class TableGeneratorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def table_generator_params
-      params.require(:table_generator).permit(:name, :contents)
+      p = params.require(:table_generator).permit(:name, :contents, categories: [])
+      categories = []
+      p[:categories].each do |c|
+        if c.to_i != 0
+          categories << Category.find(c.to_i)
+        end
+      end
+      p[:categories] = categories
+      p
     end
 end

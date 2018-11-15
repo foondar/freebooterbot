@@ -6,6 +6,15 @@
 </p>
 
 <p>
+  <strong>Categories:</strong>
+  
+  <% @table_generator.categories.each do |category|%>
+    <%= category.name %>
+  <% end %>
+    
+</p>
+
+<p>
   <strong>Results:</strong>
   <%= @table_generator.generate %>
 </p>
@@ -13,3 +22,6 @@
 <%= link_to 'Generate', table_generator_path(@table_generator) %> |
 <%= link_to 'Edit', edit_table_generator_path(@table_generator) %> |
 <%= link_to 'Back', table_generators_path %>
+<p>
+<%= link_to 'New Table Generator', new_table_generator_path %>
+</p>

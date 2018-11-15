@@ -21,6 +21,11 @@
     <%= form.text_area :contents, size: "80x30" %>
   </div>
 
+  <div class="field">
+    <%= form.label :categories %>
+    <%= form.collection_select(:categories, Category.all, :id, :name, {prompt: 'Select'}, {multiple: true}) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
