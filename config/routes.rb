@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :card_generators
   get 'dashboard/index'
   resources :categories
   resources :table_generators
