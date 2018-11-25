@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description</strong>
+  <%= @dungeon_area.description %>
+</p>
+
+<p>
+  <strong>Dressing</strong>
+  <%= @dungeon_area.dressing %>
+</p>
+
+<p>
+  <strong>Discoveries</strong>
+  <%= @dungeon_area.discoveries %>
+</p>
+
+<p>
+  <strong>Dangers</strong>
+  <%= @dungeon_area.dangers %>
+</p>
+
+<p>
+  <strong>Notes</strong>
+  <%= @dungeon_area.notes %>
+</p>
+
+<%= link_to 'Edit', edit_dungeon_area_path(@dungeon_area) %> |
+<%= link_to 'Back', dungeon_areas_path %>

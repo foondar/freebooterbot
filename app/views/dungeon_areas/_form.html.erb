@@ -1,0 +1,43 @@
+<%= form_with(model: dungeon_area, local: true) do |form| %>
+  <% if dungeon_area.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dungeon_area.errors.count, "error") %> prohibited this dungeon_area from being saved:</h2>
+
+      <ul>
+      <% dungeon_area.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dressing %>
+    <%= form.text_area :dressing, size: "80x5" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :discoveries %>
+    <%= form.text_area :discoveries, size: "80x10" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dangers %>
+    <%= form.text_area :dangers, size: "80x10" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, size: "80x20" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>

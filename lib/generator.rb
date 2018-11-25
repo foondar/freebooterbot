@@ -1,10 +1,16 @@
 class Generator
-  def self.generate contents, top = true, modifier = -1
+  def self.table_generate contents, top = true, modifier = -1
     options = []
     contents.split("\n")[0..modifier].each{|o| option, weight = o.split("*"); weight = 1 unless weight; weight.to_i.times {options << option}}
     description = roll_dice(reroll(inject_sub_generators(options[rand(options.size)])))
     #Description.create!(generator: self, description: description) if top
     description.gsub(/\r/,'')
+  end
+
+  def self.card_generate contents, top = true
+    contents.split("\n").map do |line|
+      roll_dice(inject_sub_generators(line).gsub(/\r/,''))
+    end
   end
 
   def self.inject_sub_generators result

@@ -1,0 +1,72 @@
+<%= form_with(model: dungeon_type, local: true) do |form| %>
+  <% if dungeon_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dungeon_type.errors.count, "error") %> prohibited this dungeon_type from being saved:</h2>
+
+      <ul>
+      <% dungeon_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :background %>
+    <%= form.text_field :background %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_field :detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :backgrounds %>
+    <%= form.text_area :backgrounds, size: "80x30" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_area :details, size: "80x30" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :connections %>
+    <%= form.text_area :connections, size: "80x30" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :common_areas %>
+    <%= form.text_area :common_areas, size: "80x30" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unique_areas %>
+    <%= form.text_area :unique_areas, size: "80x30" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :features %>
+    <%= form.text_area :features, size: "80x30" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :finds %>
+    <%= form.text_area :finds, size: "80x30" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dressings %>
+    <%= form.text_area :dressings, size: "80x30" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

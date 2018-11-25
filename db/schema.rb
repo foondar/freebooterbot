@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_180617) do
+ActiveRecord::Schema.define(version: 2018_11_25_162526) do
 
   create_table "card_generators", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,54 @@ ActiveRecord::Schema.define(version: 2018_11_15_180617) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["generator_id"], name: "index_descriptions_on_generator_id"
+  end
+
+  create_table "dungeon_areas", force: :cascade do |t|
+    t.string "description"
+    t.text "discoveries"
+    t.text "dangers"
+    t.integer "dungeon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "unique"
+    t.string "dressing"
+    t.text "notes"
+    t.index ["dungeon_id"], name: "index_dungeon_areas_on_dungeon_id"
+  end
+
+  create_table "dungeon_types", force: :cascade do |t|
+    t.string "name"
+    t.string "background"
+    t.string "detail"
+    t.text "backgrounds"
+    t.text "details"
+    t.text "connections"
+    t.text "common_areas"
+    t.text "unique_areas"
+    t.text "features"
+    t.text "finds"
+    t.text "dressings"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_dungeon_types_on_name", unique: true
+  end
+
+  create_table "dungeons", force: :cascade do |t|
+    t.string "name"
+    t.integer "size"
+    t.string "themes"
+    t.string "overview"
+    t.integer "dungeon_type_id"
+    t.string "background"
+    t.string "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "situation"
+    t.string "entrance_condition"
+    t.string "ruin"
+    t.text "area_diagram"
+    t.index ["dungeon_type_id"], name: "index_dungeons_on_dungeon_type_id"
+    t.index ["name"], name: "index_dungeons_on_name", unique: true
   end
 
   create_table "table_generators", force: :cascade do |t|
