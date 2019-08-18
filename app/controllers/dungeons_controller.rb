@@ -71,6 +71,6 @@ class DungeonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dungeon_params
-      params.require(:dungeon).permit(:name, :size, :themes, :overview, :dungeon_type_id, :background, :detail)
+      params.require(:dungeon).permit(:name, :size, :themes, :overview, :dungeon_type_id, :background, :detail, :situation, :entrance_condition, :ruin, :area_diagram)
     end
 end
