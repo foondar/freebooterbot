@@ -1,0 +1,67 @@
+<%= form_with(model: dungeon, local: true) do |form| %>
+  <% if dungeon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dungeon.errors.count, "error") %> prohibited this dungeon from being saved:</h2>
+
+      <ul>
+      <% dungeon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :situation %>
+    <%= form.text_field :situation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :entrance_condition %>
+    <%= form.text_field :entrance_condition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ruin %>
+    <%= form.text_field :ruin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :themes %>
+    <%= form.text_field :themes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :overview %>
+    <%= form.text_field :overview %>
+  </div>
+
+  <div class="field">
+    <%= form.label :background %>
+    <%= form.text_field :background %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detail %>
+    <%= form.text_field :detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :area_diagram %>
+    <%= form.text_area :area_diagram, size: "80x30" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

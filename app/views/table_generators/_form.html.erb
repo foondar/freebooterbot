@@ -1,0 +1,32 @@
+<%= form_with(model: table_generator, local: true) do |form| %>
+  <% if table_generator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(table_generator.errors.count, "error") %> prohibited this table_generator from being saved:</h2>
+
+      <ul>
+      <% table_generator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contents %>
+    <%= form.text_area :contents, size: "80x30" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :categories %>
+    <%= form.collection_select(:categories, Category.all, :id, :name, {prompt: 'Select'}, {multiple: true}) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

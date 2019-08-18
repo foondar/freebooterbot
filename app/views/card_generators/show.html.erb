@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @card_generator.name %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @card_generator.contents %>
+</p>
+
+<p>
+  <strong><%= @card_generator.name %>:</strong>
+  <% @card_generator.generate.each do |line| %>
+    <p>
+      <%= line %>
+    </p>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_card_generator_path(@card_generator) %> |
+<%= link_to 'Back', card_generators_path %>

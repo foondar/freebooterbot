@@ -17,6 +17,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+*.swp
 
 # Ignore uploaded files in development
 /storage/*
@@ -27,6 +28,7 @@
 
 /public/assets
 .byebug_history
+
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key

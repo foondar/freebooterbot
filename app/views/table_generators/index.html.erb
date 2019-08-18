@@ -1,0 +1,28 @@
+<h1>Table Generators</h1>
+
+<%= link_to 'New Table Generator', new_table_generator_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contents</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @table_generators.each do |table_generator| %>
+      <tr>
+        <td><%= table_generator.name %></td>
+        <td><%= table_generator.generate %></td>
+        <td><%= link_to 'Show', table_generator %></td>
+        <td><%= link_to 'Edit', edit_table_generator_path(table_generator) %></td>
+        <td><%= link_to 'Destroy', table_generator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Table Generator', new_table_generator_path %>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dungeon Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Background</th>
+      <th>Detail</th>
+      <th>Backgrounds</th>
+      <th>Details</th>
+      <th>Connections</th>
+      <th>Common areas</th>
+      <th>Unique areas</th>
+      <th>Features</th>
+      <th>Finds</th>
+      <th>Dressings</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dungeon_types.each do |dungeon_type| %>
+      <tr>
+        <td><%= dungeon_type.name %></td>
+        <td><%= dungeon_type.background %></td>
+        <td><%= dungeon_type.detail %></td>
+        <td><%= dungeon_type.backgrounds %></td>
+        <td><%= dungeon_type.details %></td>
+        <td><%= dungeon_type.connections %></td>
+        <td><%= dungeon_type.common_areas %></td>
+        <td><%= dungeon_type.unique_areas %></td>
+        <td><%= dungeon_type.features %></td>
+        <td><%= dungeon_type.finds %></td>
+        <td><%= dungeon_type.dressings %></td>
+        <td><%= link_to 'Show', dungeon_type %></td>
+        <td><%= link_to 'Edit', edit_dungeon_type_path(dungeon_type) %></td>
+        <td><%= link_to 'Destroy', dungeon_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dungeon Type', new_dungeon_type_path %>

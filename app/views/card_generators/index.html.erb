@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Card Generators</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contents</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @card_generators.each do |card_generator| %>
+      <tr>
+        <td><%= card_generator.name %></td>
+        <td><%= card_generator.contents %></td>
+        <td><%= link_to 'Show', card_generator %></td>
+        <td><%= link_to 'Edit', edit_card_generator_path(card_generator) %></td>
+        <td><%= link_to 'Destroy', card_generator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card Generator', new_card_generator_path %>

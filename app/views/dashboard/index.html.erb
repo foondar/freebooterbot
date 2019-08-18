@@ -1,0 +1,20 @@
+<h1>Scenerio Idea Generators</h1>
+<%= link_to "Categories", categories_path %>
+<%= link_to "Generators", table_generators_path %>
+<%= link_to "Card Generators", card_generators_path %>
+<%= link_to "Dungeons", dungeons_path %>
+<%= link_to "Dungeon Types", dungeon_types_path %>
+
+<% @categories.each do |category| %>
+  <h2>
+    <%= category.name %>
+  </h2>
+  <% category.table_generators.each do |generator| %>
+    <h3>
+    <%= generator.name %>
+    </h3>
+    <p>
+      <%= generator.generate %>
+    </p>
+  <% end %>
+<% end %>

@@ -1,0 +1,2 @@
+module DungeonTypesHelper
+end

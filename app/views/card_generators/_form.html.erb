@@ -1,0 +1,27 @@
+<%= form_with(model: card_generator, local: true) do |form| %>
+  <% if card_generator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(card_generator.errors.count, "error") %> prohibited this card_generator from being saved:</h2>
+
+      <ul>
+      <% card_generator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contents %>
+    <%= form.text_area :contents, size: "80x30" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

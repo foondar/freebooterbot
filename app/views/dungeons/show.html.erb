@@ -1,0 +1,55 @@
+<% content_for :header do %>
+  <%= javascript_include_tag 'mermaid' %>
+  <%= javascript_tag do %>
+    mermaid.initialize({startOnLoad:true})
+  <% end %>
+<% end %>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dungeon.name %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @dungeon.size %>
+</p>
+
+<p>
+  <strong>Themes:</strong>
+  <%= @dungeon.themes %>
+</p>
+
+<p>
+  <strong>Overview:</strong>
+  <%= @dungeon.overview %>
+</p>
+
+<p>
+  <strong>Dungeon type:</strong>
+  <%= @dungeon.dungeon_type.name %>
+</p>
+
+<p>
+  <strong>Background:</strong>
+  <%= @dungeon.background %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @dungeon.detail %>
+</p>
+
+<p>
+  <strong>Areas</strong>
+  <div class='mermaid'>
+     graph LR
+       <%= @dungeon.area_diagram %> 
+  </div>
+</p>
+
+<%= link_to 'Edit', edit_dungeon_path(@dungeon) %> |
+<%= link_to 'Back', dungeons_path %>
