@@ -2,15 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "dungeons/show", type: :view do
   before(:each) do
-    @dungeon = assign(:dungeon, Dungeon.create!(
-      :name => "Name",
-      :size => "Size",
-      :themes => "Themes",
-      :overview => "Overview",
-      :dungeon_type => nil,
-      :background => "Background",
-      :detail => "Detail"
-    ))
+    @dungeon = build(:dungeon)
   end
 
   it "renders attributes in <p>" do
@@ -19,8 +11,10 @@ RSpec.describe "dungeons/show", type: :view do
     expect(rendered).to match(/Size/)
     expect(rendered).to match(/Themes/)
     expect(rendered).to match(/Overview/)
-    expect(rendered).to match(//)
     expect(rendered).to match(/Background/)
     expect(rendered).to match(/Detail/)
+    expect(rendered).to match(@dungeon.name)
+    expect(rendered).to match(@dungeon.themes)
+    expect(rendered).to match(@dungeon.detail)
   end
 end

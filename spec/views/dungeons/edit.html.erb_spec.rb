@@ -7,7 +7,7 @@ RSpec.describe "dungeons/edit", type: :view do
       :size => "MyString",
       :themes => "MyString",
       :overview => "MyString",
-      :dungeon_type => nil,
+      :dungeon_type => build(:dungeon_type),
       :background => "MyString",
       :detail => "MyString"
     ))
@@ -25,8 +25,6 @@ RSpec.describe "dungeons/edit", type: :view do
       assert_select "input[name=?]", "dungeon[themes]"
 
       assert_select "input[name=?]", "dungeon[overview]"
-
-      assert_select "input[name=?]", "dungeon[dungeon_type_id]"
 
       assert_select "input[name=?]", "dungeon[background]"
 
