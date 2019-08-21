@@ -1,6 +1,5 @@
 class CreateDungeons < ActiveRecord::Migration[5.2]
   def change
-    drop_table :dungeons
     create_table :dungeons do |t|
       t.string :name
       t.string :size
